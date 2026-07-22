@@ -9,6 +9,24 @@
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
     </plugin>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros><namespace>/gazebo</namespace></ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
+    <plugin name="collision_monitor" filename="libcollision_monitor.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <robot_name>tiago</robot_name>
+      <ignore_models>ground_plane</ignore_models>
+      <force_threshold>1.0</force_threshold>
+      <publish_rate>50</publish_rate>
+    </plugin>
+    <plugin filename="libgazebo_ros_apply_body_wrench.so" name="apply_body_wrench">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+    </plugin>
     <plugin
       filename="gz-sim-user-commands-system"
       name="gz::sim::systems::UserCommands">
