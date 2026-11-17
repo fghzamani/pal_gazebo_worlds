@@ -1,0 +1,189 @@
+<sdf version='1.7'>
+  <world name='doorway_075m'>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <update_rate>50.0</update_rate>
+    </plugin>
+    <plugin name="collision_monitor" filename="libcollision_monitor.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <robot_name>tiago</robot_name>
+      <ignore_models>ground_plane</ignore_models>
+      <force_threshold>1.0</force_threshold>
+      <publish_rate>50</publish_rate>
+    </plugin>
+    
+    <!-- Light & Ground -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name='wall_south'>
+      <static>1</static>
+      <pose>0.0000 -8.0000 1.0000 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8.0000 0.2000 2.0000</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>8.0000 0.2000 2.0000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='wall_north'>
+      <static>1</static>
+      <pose>0.0000 8.0000 1.0000 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8.0000 0.2000 2.0000</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>8.0000 0.2000 2.0000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='wall_west'>
+      <static>1</static>
+      <pose>-4.0000 0.0000 1.0000 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2000 16.0000 2.0000</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.2000 16.0000 2.0000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='wall_east'>
+      <static>1</static>
+      <pose>4.0000 0.0000 1.0000 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2000 16.0000 2.0000</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.2000 16.0000 2.0000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='divider_west'>
+      <static>1</static>
+      <pose>-2.2125 0.0000 1.0000 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3.5750 0.2000 2.0000</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>3.5750 0.2000 2.0000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='divider_east'>
+      <static>1</static>
+      <pose>2.2125 0.0000 1.0000 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3.5750 0.2000 2.0000</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>3.5750 0.2000 2.0000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

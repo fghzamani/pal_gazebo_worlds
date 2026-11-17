@@ -1,6 +1,21 @@
 <?xml version="1.0" ?>
 <sdf version='1.4'>
   <world name='default'>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <update_rate>50.0</update_rate>
+    </plugin>
+    <plugin name="collision_monitor" filename="libcollision_monitor.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <robot_name>tiago</robot_name>
+      <ignore_models>ground_plane</ignore_models>
+      <force_threshold>1.0</force_threshold>
+      <publish_rate>50</publish_rate>
+    </plugin>
     <physics type='ode'>
       <gravity>0 0 -9.81</gravity>
       <ode>
